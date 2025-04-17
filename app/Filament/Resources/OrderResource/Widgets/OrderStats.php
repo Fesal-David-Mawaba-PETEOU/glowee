@@ -13,15 +13,15 @@ class OrderStats extends BaseWidget
         return [
             Stat::make('New Orders', Order::query()->where('status', 'new')->count())
                 ->color('success')
-                ->icon('heroicon-o-shopping-cart'),
+                ->icon('heroicon-o-sparkles'),
+            
+            Stat::make('Processing Orders', Order::query()->where('status', 'processing')->count())
+                ->color('warning')
+                ->icon('heroicon-o-arrow-path'),
 
             Stat::make('Shipped Orders', Order::query()->where('status', 'shipped')->count())
                 ->color('warning')
                 ->icon('heroicon-o-truck'),
-            
-            Stat::make('Processing Orders', Order::query()->where('status', 'processing')->count())
-                ->color('warning')
-                ->icon('heroicon-o-cog'),
 
             Stat::make('Completed Orders', Order::query()->where('status', 'delivered')->count())
                 ->color('primary')

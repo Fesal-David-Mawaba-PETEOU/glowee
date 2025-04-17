@@ -33,10 +33,10 @@ class ListOrders extends ListRecords
             null => Tab::make('All Orders'),
             'new' => Tab::make()->query(fn ($query) => $query->where('status', 'new'))
                 ->label('New Orders')
-                ->icon('heroicon-o-shopping-cart'),
+                ->icon('heroicon-o-sparkles'),
             'processing' => Tab::make()->query(fn ($query) => $query->where('status', 'processing'))
                 ->label('Processing Orders')
-                ->icon('heroicon-o-cog'),
+                ->icon('heroicon-o-arrow-path'),
             'shipped' => Tab::make()->query(fn ($query) => $query->where('status', 'shipped'))
                 ->label('Shipped Orders')
                 ->icon('heroicon-o-truck'),
